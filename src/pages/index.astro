@@ -1,22 +1,9 @@
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header>
-            <nav>
-                <ul>
-                    <li><a href="/src/pages/index.astro">Home</a></li>
-                    <li><a href="/src/pages/about.astro">About</a></li>
-                    <li><a href="/src/pages/blog.astro">Blog</a></li>
-                </ul>
-            </nav>
-        </header>
-		<h1>Hola soy un index</h1>
-	</body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
+const pageTitle = "Home Page";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+</BaseLayout>
